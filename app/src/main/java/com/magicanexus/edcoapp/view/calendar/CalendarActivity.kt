@@ -16,9 +16,11 @@ class CalendarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar)
 
+        //Is Timber working
+
         val viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         viewModel.getPosts().observe(this, Observer {
-            Timber.e("$it")
+            Timber.e("${it.numGames}")
         })
     }
 }

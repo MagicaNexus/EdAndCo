@@ -13,9 +13,9 @@ import kotlin.collections.ArrayList
 
 public class MainActivityViewModel : ViewModel()
 {
-    fun getPosts() = liveData(Dispatchers.IO)
+    fun getPosts(date : Long) = liveData(Dispatchers.IO)
     {
-        emit(CalendarRepository.getInstance().getScoreboard(20200108))
+        emit(CalendarRepository.getInstance().getScoreboard(date))
     }
 
 }
